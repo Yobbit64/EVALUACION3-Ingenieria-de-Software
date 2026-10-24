@@ -1,0 +1,73 @@
+Run started:2026-10-18 01:52:52.358414+00:00
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '1234'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
+   Location: Live Share/Vistas.py:59:46
+58	
+59	        if usuario == "admin" and password == "1234":
+60	            self.root.destroy()
+
+--------------------------------------------------
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html
+   Location: Live Share/db.py:229:8
+228	                max_num = num
+229	        except:
+230	            continue
+231	    return f"VEN-{max_num + 1:03d}"
+
+--------------------------------------------------
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html
+   Location: Live Share/db.py:246:8
+245	                max_num = num
+246	        except:
+247	            continue
+248	    return f"BOL-{max_num + 1:06d}"
+
+--------------------------------------------------
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html
+   Location: Live Share/db.py:451:8
+450	            if num > max_num: max_num = num
+451	        except: continue
+452	    nuevo_id = f"CLI-{max_num + 1:03d}"
+
+--------------------------------------------------
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html
+   Location: Live Share/db.py:563:16
+562	                    if num > max_num: max_num = num
+563	                except: continue
+564	    return f"NC-{max_num + 1:03d}"
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 3286
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 5
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 4
+Files skipped (0):

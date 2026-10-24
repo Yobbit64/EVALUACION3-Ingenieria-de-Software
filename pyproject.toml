@@ -1,0 +1,25 @@
+[project]
+name = "boutique"
+version = "1.0.0"
+requires-python = ">=3.10"
+
+# ---------- Bandit ----------
+[tool.bandit]
+exclude_dirs = ["tests", ".venv", "__pycache__", "build", "dist"]
+skips = []
+
+# ---------- Ruff ----------
+[tool.ruff]
+line-length = 100
+exclude = [".venv", "__pycache__", "build", "dist"]
+
+[tool.ruff.lint]
+# Solo reglas de seguridad (S) + errores reales (F) + bugs potenciales (B)
+# Quitamos "E" (estilo) porque el código legacy no sigue PEP8 y no es
+# parte del alcance de OWASP A03:2025 (cadena de suministro).
+select = ["F", "S", "B"]
+
+# Ignorar reglas de seguridad irrelevantes en tests
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106", "S311"]
+"Live Share/**" = ["S101"]

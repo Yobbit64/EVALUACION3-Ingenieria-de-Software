@@ -1,0 +1,31 @@
+2026-10-19 21:37:08,489 [INFO] db: Conectado a MongoDB Atlas
+2026-10-19 21:53:44,278 [ERROR] tkinter: Excepción no controlada en callback de Tkinter
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/tkinter/__init__.py", line 2117, in __call__
+    return self.func(*args)
+           ~~~~~~~~~^^^^^^^
+  File "/home/pablo/Escritorio/proyecto_boutique/Live Share/Vistas.py", line 65, in <lambda>
+    self.root.bind("<Return>", lambda e: self.iniciar_sesion())
+                                         ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/pablo/Escritorio/proyecto_boutique/Live Share/Vistas.py", line 108, in iniciar_sesion
+    self.entry_password.delete(0, tk.END)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/usr/lib/python3.14/tkinter/__init__.py", line 3311, in delete
+    self.tk.call(self._w, 'delete', first, last)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: invalid command name ".!frame.!entry2"
+2026-10-20 10:05:25,523 [ERROR] errores: [test] Excepción no controlada
+Traceback (most recent call last):
+  File "<string>", line 11, in <module>
+    raise ConnectionError('Fallo de red simulado')
+ConnectionError: Fallo de red simulado
+2026-10-20 10:06:21,489 [ERROR] errores: [test] Excepción no controlada
+Traceback (most recent call last):
+  File "<string>", line 10, in <module>
+    raise ConnectionError('Fallo de red simulado')
+ConnectionError: Fallo de red simulado
+2026-10-20 10:06:46,564 [ERROR] errores: [test] Excepción no controlada
+Traceback (most recent call last):
+  File "<string>", line 10, in <module>
+    raise ConnectionError('Fallo de red simulado')
+ConnectionError: Fallo de red simulado
